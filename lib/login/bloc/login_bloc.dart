@@ -51,6 +51,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginSubmitted event,
     Emitter<LoginState> emit,
   ) async {
+    print('on passe dans levent');
+    print(state.status);
     if (state.status.isValidated) {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
 

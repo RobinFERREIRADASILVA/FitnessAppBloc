@@ -79,8 +79,16 @@ class LoginForm extends StatelessWidget {
                           child: TextFormField(
                             // controller: emailController,
                             style: TextStyle(color: Colors.white),
-                            decoration: const InputDecoration(
+                            onChanged: (username) => {
+                              context
+                                  .read<LoginBloc>()
+                                  .add(LoginUsernameChanged(username))
+                            },
+                            decoration: InputDecoration(
                               labelText: 'Email',
+                              errorText: state.username.invalid
+                                  ? 'Mauvais email'
+                                  : null,
                               hintStyle: TextStyle(color: Color(0xFF6a6b76)),
                               labelStyle: TextStyle(color: Color(0xFF6a6b76)),
                               focusedBorder: OutlineInputBorder(
@@ -109,9 +117,17 @@ class LoginForm extends StatelessWidget {
                               top: 10, bottom: 10, left: 10, right: 10),
                           child: TextFormField(
                             style: TextStyle(color: Colors.white),
+                            onChanged: (password) => {
+                              context
+                                  .read<LoginBloc>()
+                                  .add(LoginPasswordChanged(password))
+                            },
                             // controller: passwordController,
                             obscureText: true,
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
+                              errorText: state.password.invalid
+                                  ? 'Mauvais mot de passe'
+                                  : null,
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)),
@@ -155,6 +171,7 @@ class LoginForm extends StatelessWidget {
                                     right: MediaQuery.of(context).size.width /
                                         2.8)),
                             onPressed: () async {
+                              context.read<LoginBloc>().add(LoginSubmitted());
                               // Validate returns true if the form is valid, or false otherwise.
                               // if (formKey.currentState!
                               //     .validate()) {
