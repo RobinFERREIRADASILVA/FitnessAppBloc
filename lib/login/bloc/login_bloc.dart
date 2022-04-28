@@ -5,6 +5,7 @@ import 'package:flutter_login/authentication/bloc/authentication_bloc.dart';
 import 'package:flutter_login/login/models/models.dart';
 import 'package:flutter_login/login/models/username.dart';
 import 'package:formz/formz.dart';
+import 'package:user_repository/user_repository.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
@@ -19,6 +20,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginSubmitted>(_onSubmitted);
     on<LoginSignUp>(_onSignUp);
     on<LoginScreenViewChanged>(_onChangeScreenView);
+    on<LoginLoadUser>(_onLoadUser);
   }
 
   final AuthenticationRepository _authenticationRepository;
@@ -84,5 +86,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         emit(state.copyWith(status: FormzStatus.submissionFailure));
       }
     }
+  }
+
+  void _onLoadUser(
+    LoginLoadUser event,
+    Emitter<LoginState> emit,
+  ) {
+    print(event);
+    emit(state.copyWith(user: event.user));
   }
 }

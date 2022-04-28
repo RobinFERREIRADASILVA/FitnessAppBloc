@@ -41,3 +41,12 @@ class LoginScreenViewChanged extends LoginEvent {
   @override
   List<Object> get props => [screenView];
 }
+
+class LoginLoadUser extends LoginEvent {
+  const LoginLoadUser(this.user);
+
+  final user;
+
+  @override
+  List<Object> get props => [user];
+}

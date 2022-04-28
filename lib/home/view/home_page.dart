@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_login/login/bloc/login_bloc.dart';
 
 class HomePage extends StatelessWidget {
   static Route route() {
@@ -7,6 +9,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('bonsoir'));
+    print('cest surement toi qui plante non ?');
+    return BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
+      print(state);
+      return Container(child: Text('bonsoir ${state.user}'));
+    });
   }
 }
