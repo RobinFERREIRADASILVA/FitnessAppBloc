@@ -171,7 +171,13 @@ class LoginForm extends StatelessWidget {
                                     right: MediaQuery.of(context).size.width /
                                         2.8)),
                             onPressed: () async {
-                              context.read<LoginBloc>().add(LoginSubmitted());
+                              state.screenView == 'login'
+                                  ? context
+                                      .read<LoginBloc>()
+                                      .add(LoginSubmitted())
+                                  : context
+                                      .read<LoginBloc>()
+                                      .add(LoginSignUp());
                               // Validate returns true if the form is valid, or false otherwise.
                               // if (formKey.currentState!
                               //     .validate()) {

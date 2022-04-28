@@ -17,6 +17,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginUsernameChanged>(_onUsernameChanged);
     on<LoginPasswordChanged>(_onPasswordChanged);
     on<LoginSubmitted>(_onSubmitted);
+    on<LoginSignUp>(_onSignUp);
     on<LoginScreenViewChanged>(_onChangeScreenView);
   }
 
@@ -64,10 +65,24 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginScreenViewChanged event,
     Emitter<LoginState> emit,
   ) {
-    print(event.screenView);
-    print('je suis bien là');
     emit(state.copyWith(
       screenView: event.screenView,
     ));
+  }
+
+  void _onSignUp(
+    LoginSignUp event,
+    Emitter<LoginState> emit,
+  ) async {
+    if (state.status.isValidated) {
+      emit(state.copyWith(status: FormzStatus.submissionInProgress));
+
+      try {
+        await _authenticationRepository.signUp(
+            email: state.username.value, password: state.password.value);
+      } catch (_) {
+        emit(state.copyWith(status: FormzStatus.submissionFailure));
+      }
+    }
   }
 }

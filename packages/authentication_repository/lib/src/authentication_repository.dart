@@ -27,10 +27,26 @@ class AuthenticationRepository {
     print(user);
     print(result);
 
-    await Future.delayed(
-      const Duration(milliseconds: 300),
-      () => _controller.add(AuthenticationStatus.authenticated),
-    );
+    if (user != null) {
+      _controller.add(AuthenticationStatus.authenticated);
+    }
+  }
+
+  Future<void> signUp({
+    required String email,
+    required String password,
+  }) async {
+    UserCredential result = await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+
+    User? user = result.user;
+    print('on passe au moins ici');
+
+    print(user);
+
+    if (user != null) {
+      _controller.add(AuthenticationStatus.authenticated);
+    }
   }
 
   void logOut() {

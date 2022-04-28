@@ -29,6 +29,10 @@ class LoginSubmitted extends LoginEvent {
   const LoginSubmitted();
 }
 
+class LoginSignUp extends LoginEvent {
+  const LoginSignUp();
+}
+
 class LoginScreenViewChanged extends LoginEvent {
   const LoginScreenViewChanged(this.screenView);
 
