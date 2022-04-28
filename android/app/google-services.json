@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "898109643759",
+    "project_id": "fitness-app-ddc22",
+    "storage_bucket": "fitness-app-ddc22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898109643759:android:fa8b310cd7907d066bb41a",
+        "android_client_info": {
+          "package_name": "com.example.fitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898109643759-0en1bi9d4roa5a97ltv7n7nsap4se04h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeLYlWzA0AXZTpga7x-lC8TYQ6UjHotos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898109643759-0en1bi9d4roa5a97ltv7n7nsap4se04h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "898109643759-f6pb0cetem4ipg0vuherva38npv248hc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fitnessApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898109643759:android:454a8edd881232f46bb41a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898109643759-0en1bi9d4roa5a97ltv7n7nsap4se04h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeLYlWzA0AXZTpga7x-lC8TYQ6UjHotos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898109643759-0en1bi9d4roa5a97ltv7n7nsap4se04h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "898109643759-f6pb0cetem4ipg0vuherva38npv248hc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fitnessApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
