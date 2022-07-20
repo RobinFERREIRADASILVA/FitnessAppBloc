@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_login/login/bloc/login_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginChoice extends StatelessWidget {
   @override
@@ -13,12 +14,10 @@ class LoginChoice extends StatelessWidget {
               top: 350,
               left: 0,
               right: 0,
-              child: Text(
-                'Fitness App',
-                textAlign: TextAlign.center,
-                // style: GoogleFonts.abrilFatface(
-                //     color: Colors.white, fontSize: 35))
-              )),
+              child: Text('Fitness App',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.abrilFatface(
+                      color: Colors.white, fontSize: 35)))
         ]),
         Expanded(
           child: Container(

@@ -20,6 +20,7 @@ dependencies:
   firebase_auth: ^3.3.8
   firebase_core: ^1.11.0
   google_fonts: ^2.2.0
+  table_calendar: ^3.0.6
 
 dev_dependencies:
   flutter_test:
@@ -33,4 +34,5 @@ flutter:
     - images/home.jfif
     - images/signup.jfif
     - images/logo.jpg
+    - images/perf.jpg
 

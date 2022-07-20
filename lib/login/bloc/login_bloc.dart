@@ -92,7 +92,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginLoadUser event,
     Emitter<LoginState> emit,
   ) {
-    print(event);
+    print(event.user);
     emit(state.copyWith(user: event.user));
   }
 }
